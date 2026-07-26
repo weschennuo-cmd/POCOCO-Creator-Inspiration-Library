@@ -1,0 +1,50 @@
+.compact-hero {
+  box-sizing: border-box;
+  min-height: 0;
+}
+
+@media (min-width: 981px) {
+  .embed-wrap,
+  .embed-wrap iframe {
+    aspect-ratio: 4 / 4.7;
+  }
+
+  .case-copy,
+  .case-card:nth-child(even) .case-copy {
+    padding-top: 13px;
+  }
+
+  .direction {
+    margin-bottom: 8px;
+  }
+
+  .case-copy h3 {
+    margin-bottom: 10px;
+  }
+
+  .case-block {
+    padding-top: 9px;
+    padding-bottom: 9px;
+  }
+
+  .overview-block,
+  .takeaway {
+    padding: 10px;
+  }
+
+  .case-block p,
+  .takeaway p {
+    line-height: 1.42;
+  }
+}
+
+@media (max-width: 620px) {
+  .compact-hero {
+    min-height: 0;
+  }
+
+  .embed-wrap,
+  .embed-wrap iframe {
+    aspect-ratio: 4 / 5.05;
+  }
+}

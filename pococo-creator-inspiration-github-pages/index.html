@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f3ff">
+  <meta name="description" content="A curated library of POCOCO creator inspiration: content angles, visual references, and practical ideas to borrow.">
+  <title>POCOCO Creator Inspiration Library</title>
+  <link rel="preconnect" href="https://www.instagram.com">
+  <link rel="preconnect" href="https://www.youtube-nocookie.com">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./layout-v2.css">
+  <link rel="stylesheet" href="./compact-final.css">
+  <link rel="stylesheet" href="./embed-fallback.css">
+  <link rel="stylesheet" href="./nav-enhancement.css">
+</head>
+<body>
+  <a class="skip-link" href="#library">Skip to inspiration library</a>
+
+  <header class="site-header" id="top">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="POCOCO Creator Inspiration Library home">
+        <span class="brand-orbit" aria-hidden="true"></span>
+        <span class="brand-name">POCOCO</span>
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="brand-subtitle">Creator Inspiration</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="category-nav">
+        <span>Browse categories</span>
+        <span class="menu-icon" aria-hidden="true"></span>
+      </button>
+      <nav class="category-nav" id="category-nav" aria-label="Inspiration categories"></nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero compact-hero" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Creator reference library</p>
+        <h1 id="page-title">Find your angle.<br><span>Make the night your own.</span></h1>
+        <p class="hero-lead">
+          Browse real creator examples across family life, neurodivergent support, wellness,
+          cozy spaces, and projection-led storytelling. Each reference highlights the idea,
+          the strongest visual moment, and one practical technique you can adapt to your audience.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#family">Start exploring</a>
+          <p><strong>32</strong> curated examples / <strong>5</strong> creative directions</p>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <figure class="hero-photo">
+          <img
+            src="./assets/hero-bedroom.webp"
+            alt="POCOCO projector creating a planetary scene in a cozy bedroom"
+          >
+        </figure>
+      </div>
+    </section>
+
+    <div id="library">
+      <div class="category-sections" id="category-sections" aria-live="polite"></div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <span class="footer-brand">POCOCO</span>
+        <p>Bring the universe into everyday moments.</p>
+      </div>
+      <a href="#top">Back to top &uarr;</a>
+    </div>
+  </footer>
+
+  <template id="category-template">
+    <section class="category-section">
+      <div class="section-heading">
+        <div>
+          <p class="section-index"></p>
+          <h2></h2>
+        </div>
+        <p class="section-count"></p>
+      </div>
+      <div class="case-list"></div>
+    </section>
+  </template>
+
+  <template id="case-template">
+    <article class="case-card">
+      <div class="video-shell">
+        <div class="video-topline">
+          <span class="platform-badge"></span>
+          <span class="watch-time"></span>
+        </div>
+        <div class="embed-wrap">
+          <iframe
+            loading="lazy"
+            title=""
+            src=""
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <a class="source-link" href="" target="_blank" rel="noopener noreferrer">
+          <span class="source-link-label">View original post</span>
+          <span aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+      <div class="case-copy">
+        <p class="direction"></p>
+        <h3></h3>
+        <div class="case-block overview-block">
+          <span class="block-label">The idea</span>
+          <p class="overview"></p>
+        </div>
+        <div class="case-block visual-block">
+          <span class="block-label">Why the visual works</span>
+          <p class="visual-note"></p>
+        </div>
+        <div class="takeaway">
+          <span class="takeaway-icon" aria-hidden="true">&#10022;</span>
+          <div>
+            <span class="block-label">What to borrow</span>
+            <p class="learn"></p>
+          </div>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <script src="./data.js"></script>
+  <script src="./app-final.js"></script>
+  <script src="./audited-instagram-fallbacks.js"></script>
+  <script src="./youtube-fallback.js"></script>
+</body>
+</html>
