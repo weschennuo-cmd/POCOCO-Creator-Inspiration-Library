@@ -1,16 +1,6 @@
 (() => {
   const covers = {
-    "DSY1_H0DEmE": "./assets/DSY1_H0DEmE-cover.png",
-    "DQUoElKEjzz": "./assets/DQUoElKEjzz-cover.png",
-    "DQkYk1mDkzo": "./assets/DQkYk1mDkzo-cover.png",
     "DSK_cb-DyaU": "./assets/DSK_cb-DyaU-cover.jpg",
-    "DXCmHhvjuhY": "./assets/DXCmHhvjuhY-cover.png",
-    "DOgoxg8CdbG": "./assets/DOgoxg8CdbG-cover.png",
-    "DNGFrBSNj_o": "./assets/DNGFrBSNj_o-cover.png",
-    "DXxsMZdOuf1": "./assets/DXxsMZdOuf1-cover.png",
-    "DW1ofFNCD5n": "./assets/DW1ofFNCD5n-cover.png",
-    "DYSE8hvSXEc": "./assets/DYSE8hvSXEc-cover.png",
-    "DYevdfpxBmO": "./assets/DYevdfpxBmO-cover.png",
     "DPBwFX5Ek1F": "./assets/DPBwFX5Ek1F-cover.jpg",
   };
 
