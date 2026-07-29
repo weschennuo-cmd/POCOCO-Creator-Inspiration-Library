@@ -1,0 +1,18 @@
+.case-card.local .embed-wrap,
+.case-card.local .embed-wrap video {
+  width: 100%;
+  min-height: 0;
+  height: auto;
+  aspect-ratio: 9 / 16;
+}
+
+.case-card.local .embed-wrap {
+  background: #100d25;
+}
+
+.case-card.local .embed-wrap video {
+  display: block;
+  border: 0;
+  object-fit: cover;
+  background: #100d25;
+}

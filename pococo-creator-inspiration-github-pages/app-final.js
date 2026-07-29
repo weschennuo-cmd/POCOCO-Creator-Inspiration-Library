@@ -39,12 +39,29 @@
       card.classList.add(item.platform);
 
       const iframe = card.querySelector("iframe");
-      iframe.src = embedUrl(item);
-      iframe.title =
-        `${item.title} - ${item.platform === "youtube" ? "YouTube" : "Instagram"} video`;
+      if (item.platform === "local") {
+        const video = document.createElement("video");
+        video.src = item.videoSrc;
+        video.poster = item.poster || "";
+        video.title = `${item.title} - original video`;
+        video.controls = true;
+        video.preload = "metadata";
+        video.playsInline = true;
+        video.setAttribute("playsinline", "");
+        iframe.replaceWith(video);
+      } else {
+        iframe.src = embedUrl(item);
+        iframe.title =
+          `${item.title} - ${item.platform === "youtube" ? "YouTube" : "Instagram"} video`;
+      }
 
-      card.querySelector(".platform-badge").textContent =
-        item.platform === "youtube" ? "YouTube reference" : "Instagram reference";
+      const platformLabel =
+        item.platform === "local"
+          ? "Original video"
+          : item.platform === "youtube"
+            ? "YouTube reference"
+            : "Instagram reference";
+      card.querySelector(".platform-badge").textContent = platformLabel;
       card.querySelector(".watch-time").textContent = `Watch: ${item.watch}`;
       card.querySelector(".direction").textContent = item.direction;
       card.querySelector("h3").textContent = item.title;
@@ -53,9 +70,13 @@
       card.querySelector(".learn").textContent = item.learn;
 
       const sourceLink = card.querySelector(".source-link");
-      sourceLink.href = item.url;
-      card.querySelector(".source-link-label").textContent =
-        item.platform === "youtube" ? "Watch on YouTube" : "View on Instagram";
+      if (item.platform === "local") {
+        sourceLink.remove();
+      } else {
+        sourceLink.href = item.url;
+        card.querySelector(".source-link-label").textContent =
+          item.platform === "youtube" ? "Watch on YouTube" : "View on Instagram";
+      }
 
       list.append(card);
     });
