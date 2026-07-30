@@ -12,6 +12,9 @@
     if (item.platform === "youtube") {
       return `https://www.youtube-nocookie.com/embed/${item.videoId}?rel=0&modestbranding=1`;
     }
+    if (item.platform === "tiktok") {
+      return `https://www.tiktok.com/player/v1/${item.videoId}?autoplay=0&loop=0&music_info=1&description=1`;
+    }
     const type = item.url.includes("/p/") ? "p" : "reel";
     return `https://www.instagram.com/${type}/${item.shortcode}/embed/`;
   };
@@ -51,8 +54,13 @@
         iframe.replaceWith(video);
       } else {
         iframe.src = embedUrl(item);
-        iframe.title =
-          `${item.title} - ${item.platform === "youtube" ? "YouTube" : "Instagram"} video`;
+        const videoPlatform =
+          item.platform === "youtube"
+            ? "YouTube"
+            : item.platform === "tiktok"
+              ? "TikTok"
+              : "Instagram";
+        iframe.title = `${item.title} - ${videoPlatform} video`;
       }
 
       const platformLabel =
@@ -60,7 +68,9 @@
           ? "Original video"
           : item.platform === "youtube"
             ? "YouTube reference"
-            : "Instagram reference";
+            : item.platform === "tiktok"
+              ? "TikTok reference"
+              : "Instagram reference";
       card.querySelector(".platform-badge").textContent = platformLabel;
       card.querySelector(".watch-time").textContent = `Watch: ${item.watch}`;
       card.querySelector(".direction").textContent = item.direction;
@@ -75,7 +85,11 @@
       } else {
         sourceLink.href = item.url;
         card.querySelector(".source-link-label").textContent =
-          item.platform === "youtube" ? "Watch on YouTube" : "View on Instagram";
+item.platform === "youtube"
+            ? "Watch on YouTube"
+            : item.platform === "tiktok"
+              ? "View on TikTok"
+              : "View on Instagram";
       }
 
       list.append(card);

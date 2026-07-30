@@ -34,9 +34,29 @@
       "Lead with a lived-in room and a relaxed personal mood, then add a few clear product actions—choose the disc, insert it, reveal the result—to keep the story both cinematic and useful."
   };
 
+  const tiktokCozyCase = {
+    category: "spaces",
+    title: "A Storybook Escape Under the Stars",
+    platform: "tiktok",
+    videoId: "7665373482074524950",
+    url: "https://www.tiktok.com/@maciastracy/video/7665373482074524950",
+    direction: "Cozy night • Storybook escapism",
+    overview:
+      "Builds around one emotional promise—a little escape from reality—and pairs a Peter Pan–inspired projection with an intimate night-in atmosphere.",
+    watch: "Full video",
+    visual:
+      "Projection-led color and a dark, softly styled room turn an everyday space into a cinematic storybook scene without overcrowding the frame.",
+    learn:
+      "Choose one projection theme that matches the caption and audio, then use restrained styling and slow pacing so the atmosphere carries the story."
+  };
   const firstFamily = library.cases.findIndex((item) => item.category === "family");
   library.cases.splice(firstFamily < 0 ? 0 : firstFamily, 0, familyCase);
 
   const firstCozy = library.cases.findIndex((item) => item.category === "spaces");
-  library.cases.splice(firstCozy < 0 ? library.cases.length : firstCozy, 0, cozyCase);
+library.cases.splice(firstCozy < 0 ? library.cases.length : firstCozy, 0, cozyCase);
+  library.cases.splice(
+    firstCozy < 0 ? library.cases.length : firstCozy + 1,
+    0,
+    tiktokCozyCase
+  );
 })();
