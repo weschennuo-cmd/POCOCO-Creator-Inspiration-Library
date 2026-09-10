@@ -6,8 +6,8 @@
     category: "family",
     title: "A Calm Bedtime with an Active Toddler",
     platform: "local",
-    videoSrc: "./assets/original-toddler-bedtime.mp4",
-    poster: "./assets/original-toddler-bedtime-poster.jpg",
+    videoSrc: "./pococo-creator-inspiration-github-pages/assets/original-toddler-bedtime.mp4",
+    poster: "./pococo-creator-inspiration-github-pages/assets/original-toddler-bedtime-poster.jpg",
     direction: "Toddler bedtime • Immersive visual transition",
     overview:
       "Uses a simple promise—creating a calm, cozy bedtime with an active toddler—then lets the projection guide the child from excited exploration into a shared reading moment.",
@@ -22,8 +22,8 @@
     category: "spaces",
     title: "A Cozy Bedroom Galaxy Transformation",
     platform: "local",
-    videoSrc: "./assets/original-projection-showcase.webm",
-    poster: "./assets/original-projection-showcase-poster.jpg",
+    videoSrc: "./pococo-creator-inspiration-github-pages/assets/original-projection-showcase.webm",
+    poster: "./pococo-creator-inspiration-github-pages/assets/original-projection-showcase-poster.jpg",
     direction: "Cozy bedroom • Day-to-night transformation",
     overview:
       "Moves from a bright, personality-filled bedroom into an immersive galaxy escape, using the projector as part of a relaxed solo evening rather than presenting it as a standalone demonstration.",
@@ -116,4 +116,5 @@ library.cases.splice(firstCozy < 0 ? library.cases.length : firstCozy, 0, cozyCa
     tiktokCozyCase
   );
 })();
+
 

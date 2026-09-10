@@ -1,19 +1,10 @@
 (() => {
-  const covers = {
-    "DSK_cb-DyaU": "./pococo-creator-inspiration-github-pages/assets/DSK_cb-DyaU-cover.jpg",
-    "DPBwFX5Ek1F": "./pococo-creator-inspiration-github-pages/assets/DPBwFX5Ek1F-cover.jpg",
-  };
-
-  document.querySelectorAll(".case-card.instagram").forEach((card) => {
+  document.querySelectorAll(".case-card.youtube").forEach((card) => {
     const sourceLink = card.querySelector(".source-link");
     const iframe = card.querySelector("iframe");
     const embedWrap = card.querySelector(".embed-wrap");
     if (!sourceLink || !iframe || !embedWrap) return;
-
-    const shortcode = Object.keys(covers).find((code) =>
-      sourceLink.href.includes(code),
-    );
-    if (!shortcode) return;
+    if (!sourceLink.href.includes("QaNa3w96IfY")) return;
 
     iframe.remove();
     embedWrap.classList.add("has-poster");
@@ -25,19 +16,18 @@
     posterLink.rel = "noopener noreferrer";
     posterLink.setAttribute(
       "aria-label",
-      "Open this Instagram reel in a new tab.",
+      "Open the original YouTube video in a new tab.",
     );
-    posterLink.innerHTML = `
-      <img src="${covers[shortcode]}" alt="">
+    posterLink.innerHTML = 
+      <img src="./pococo-creator-inspiration-github-pages/assets/QaNa3w96IfY-poster.jpg" alt="">
       <span class="poster-action">
         <span class="poster-play" aria-hidden="true">&#9654;</span>
         <span>
-          Watch the original reel
-          <small class="embed-note">This post opens on Instagram.</small>
+          Watch the original video
+          <small class="embed-note">Open on YouTube</small>
         </span>
       </span>
-    `;
+    ;
     embedWrap.append(posterLink);
   });
 })();
-
