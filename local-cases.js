@@ -49,6 +49,62 @@
     learn:
       "Choose one projection theme that matches the caption and audio, then use restrained styling and slow pacing so the atmosphere carries the story."
   };
+
+  const supplementalCategory = {
+    id: "supplemental",
+    label: "Supplemental Video Links",
+    short: "New links"
+  };
+
+  if (!library.categories.some((category) => category.id === supplementalCategory.id)) {
+    library.categories.push(supplementalCategory);
+  }
+
+  const supplementalCopy = (shortcode, index) => ({
+    category: "supplemental",
+    title: `Supplemental Instagram Reference ${String(index).padStart(2, "0")}`,
+    platform: "instagram",
+    shortcode,
+    url: `https://www.instagram.com/reel/${shortcode}/`,
+    direction: "New link batch • Instagram reel",
+    overview:
+      "Added from the supplemental link batch so this reel can be opened and reviewed directly from the library.",
+    watch: "Full reel",
+    visual:
+      "Use the original reel for visual screening; move it into a curated direction after the content angle is confirmed.",
+    learn:
+      "Check the hook, projection visibility, room styling, creator fit, and CTA before adapting the idea."
+  });
+
+  const supplementalInstagramShortcodes = [
+    "DcMQtLKpw7T",
+    "DcEEec5oCDQ",
+    "Db_iM3cPWVq",
+    "DbYtWmdCMH9",
+    "DbmSoYnsTn4",
+    "Db--7OYtOn8",
+    "DcQxGaJI5yl",
+    "Dcb9JbGBNm3",
+    "Dcha4A-TlgM",
+    "DclZXQIOkma",
+    "Dcm107YT9TG",
+    "DcmRYVdtAIl",
+    "DdCHO7xMWKE",
+    "DcT04xNvccJ"
+  ];
+
+  const existingInstagramShortcodes = new Set(
+    library.cases
+      .filter((item) => item.platform === "instagram" && item.shortcode)
+      .map((item) => item.shortcode)
+  );
+
+  supplementalInstagramShortcodes.forEach((shortcode, index) => {
+    if (!existingInstagramShortcodes.has(shortcode)) {
+      library.cases.push(supplementalCopy(shortcode, index + 1));
+      existingInstagramShortcodes.add(shortcode);
+    }
+  });
   const firstFamily = library.cases.findIndex((item) => item.category === "family");
   library.cases.splice(firstFamily < 0 ? 0 : firstFamily, 0, familyCase);
 
@@ -60,3 +116,4 @@ library.cases.splice(firstCozy < 0 ? library.cases.length : firstCozy, 0, cozyCa
     tiktokCozyCase
   );
 })();
+
