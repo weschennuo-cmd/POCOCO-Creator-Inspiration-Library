@@ -50,70 +50,224 @@
       "Choose one projection theme that matches the caption and audio, then use restrained styling and slow pacing so the atmosphere carries the story."
   };
 
-  const supplementalCategory = {
-    id: "supplemental",
-    label: "Supplemental Video Links",
-    short: "New links"
-  };
-
-  if (!library.categories.some((category) => category.id === supplementalCategory.id)) {
-    library.categories.push(supplementalCategory);
-  }
-
-  const supplementalCopy = (shortcode, index) => ({
-    category: "supplemental",
-    title: `Supplemental Instagram Reference ${String(index).padStart(2, "0")}`,
-    platform: "instagram",
-    shortcode,
-    url: `https://www.instagram.com/reel/${shortcode}/`,
-    direction: "New link batch • Instagram reel",
-    overview:
-      "Added from the supplemental link batch so this reel can be opened and reviewed directly from the library.",
-    watch: "Full reel",
-    visual:
-      "Use the original reel for visual screening; move it into a curated direction after the content angle is confirmed.",
-    learn:
-      "Check the hook, projection visibility, room styling, creator fit, and CTA before adapting the idea."
-  });
-
-  const supplementalInstagramShortcodes = [
-    "DcMQtLKpw7T",
-    "DcEEec5oCDQ",
-    "Db_iM3cPWVq",
-    "DbYtWmdCMH9",
-    "DbmSoYnsTn4",
-    "Db--7OYtOn8",
-    "DcQxGaJI5yl",
-    "Dcb9JbGBNm3",
-    "Dcha4A-TlgM",
-    "DclZXQIOkma",
-    "Dcm107YT9TG",
-    "DcmRYVdtAIl",
-    "DdCHO7xMWKE",
-    "DcT04xNvccJ"
+  const verifiedAddedCases = [
+    {
+      category: "family",
+      title: "Screen-Free Audiobook Bedtime",
+      platform: "instagram",
+      shortcode: "DcMQtLKpw7T",
+      url: "https://www.instagram.com/reel/DcMQtLKpw7T/",
+      direction: "Kids’ bedtime • Screen-free family routine",
+      overview:
+        "The creator frames POCOCO as an evening alternative to screens: the family turns on the projector, gets cozy, and plays kids’ audiobooks or podcasts.",
+      watch: "Full reel",
+      visual:
+        "The value comes from combining the ceiling projection with a quiet listening activity, so the product supports a real family wind-down instead of replacing the routine.",
+      learn:
+        "Pair projection with a concrete kid-friendly action—storybook audio, podcast listening, reading, or cuddling—so parents immediately understand how to use it."
+    },
+    {
+      category: "spaces",
+      title: "Twilight Movie Night Atmosphere",
+      platform: "instagram",
+      shortcode: "DcEEec5oCDQ",
+      url: "https://www.instagram.com/reel/DcEEec5oCDQ/",
+      direction: "Bookish movie night • Magical room mood",
+      overview:
+        "A book/movie creator links the projector to a Twilight-style evening, using the stars to make a familiar fandom night feel more magical.",
+      watch: "Full reel",
+      visual:
+        "The strongest angle is aesthetic fit: dark, moody pop-culture styling plus galaxy projection creates a clear themed atmosphere.",
+      learn:
+        "Tie a projection disc to a specific movie, book, or fandom mood so the room transformation has a recognizable story."
+    },
+    {
+      category: "family",
+      title: "School Counselor Mom Bedtime Transition",
+      platform: "instagram",
+      shortcode: "Db_iM3cPWVq",
+      url: "https://www.instagram.com/reel/Db_iM3cPWVq/",
+      direction: "Kids’ bedtime • Gentle transition after a full day",
+      overview:
+        "A professional school counselor and mom explains that children may be in bed before their brains are ready to slow down, then shows POCOCO as part of the boys’ nightly transition.",
+      watch: "Full reel",
+      visual:
+        "The routine has credible parenting details: screens and overhead lights off, children choose a projection disc, then the family reads, talks, or quietly looks up together.",
+      learn:
+        "Use parent expertise carefully: explain the transition challenge, show the child’s choice, and mention practical helpers like the timer without making medical claims."
+    },
+    {
+      category: "product",
+      title: "Small Change, Better Nights",
+      platform: "instagram",
+      shortcode: "DbYtWmdCMH9",
+      url: "https://www.instagram.com/reel/DbYtWmdCMH9/",
+      direction: "Brand product clip • Quick emotional promise",
+      overview:
+        "The official POCOCO account presents the reel around a simple promise: a small projector-led change can make nights feel better.",
+      watch: "Full reel",
+      visual:
+        "Because the caption is short, the clip should be used mainly as a quick product-mood reference rather than a detailed creator story.",
+      learn:
+        "Keep one clear transformation message and let the visual reveal carry the proof when the caption is minimal."
+    },
+    {
+      category: "neuro",
+      title: "Nervous System Wind-Down Cues",
+      platform: "instagram",
+      shortcode: "DbmSoYnsTn4",
+      url: "https://www.instagram.com/reel/DbmSoYnsTn4/",
+      direction: "Nervous system education • Sleep hygiene routine",
+      overview:
+        "The creator explains wind-down through nervous-system safety cues, then places the projector inside a screen-free routine with lower lights, tidying, journaling, reading, and music.",
+      watch: "Full reel",
+      visual:
+        "The projection works as an environmental cue: reducing harsh light and adding a softer visual focus makes the routine feel calmer and more intentional.",
+      learn:
+        "Educational sleep content should connect the projector to environment cues and routine design, while avoiding promises that it treats anxiety or sleep problems."
+    },
+    {
+      category: "spaces",
+      title: "Tiny Universe Bedroom Ritual",
+      platform: "instagram",
+      shortcode: "Db--7OYtOn8",
+      url: "https://www.instagram.com/reel/Db--7OYtOn8/",
+      direction: "Bedroom transformation • Peaceful nighttime ritual",
+      overview:
+        "The creator’s hook is bringing the universe into the bedroom, turning an ordinary room into a peaceful little nighttime ritual.",
+      watch: "Full reel",
+      visual:
+        "This belongs with room inspiration because the central proof is spatial: the ceiling and bedroom become the story.",
+      learn:
+        "Use a simple transformation line, then hold on the room-wide projection long enough for viewers to feel the before-and-after."
+    },
+    {
+      category: "wellness",
+      title: "IVF Stress-Relief Room Idea",
+      platform: "instagram",
+      shortcode: "DcQxGaJI5yl",
+      url: "https://www.instagram.com/reel/DcQxGaJI5yl/",
+      direction: "IVF stress context • Science-led relaxation",
+      overview:
+        "An IVF lab professional connects her love of stars with the stress of retrieval and transfer days, suggesting the projector as a way to make clinical-feeling spaces softer.",
+      watch: "Full reel",
+      visual:
+        "The contrast between microscope/science context and galaxy projection gives the post a memorable professional angle beyond ordinary bedroom decor.",
+      learn:
+        "For health-adjacent creators, frame the product as atmosphere and comfort support only; do not imply treatment or guaranteed stress relief."
+    },
+    {
+      category: "neuro",
+      title: "School SLP Sensory Space",
+      platform: "instagram",
+      shortcode: "Dcha4A-TlgM",
+      url: "https://www.instagram.com/reel/Dcha4A-TlgM/",
+      direction: "SLP classroom support • Sensory environment",
+      overview:
+        "A school SLP frames communication support around regulation first, using a cozy sensory space to help students feel supported before expecting them to talk.",
+      watch: "Full reel",
+      visual:
+        "The projection is useful as part of a sensory environment: it creates a softer shared focus without demanding immediate verbal interaction.",
+      learn:
+        "When creators have education or therapy credentials, anchor the idea in environment design and support, not in cure-style claims."
+    },
+    {
+      category: "wellness",
+      title: "Teacher Brain After-School Switch-Off",
+      platform: "instagram",
+      shortcode: "DclZXQIOkma",
+      url: "https://www.instagram.com/reel/DclZXQIOkma/",
+      direction: "Teacher well-being • School-to-home transition",
+      overview:
+        "A trauma-informed teacher describes the hard transition from school mode to home mode, then uses lower lights, less noise, a couch, TV or reading, and the galaxy projection to decompress.",
+      watch: "Full reel",
+      visual:
+        "The room environment visibly supports the mental shift: projection changes the feel of the room after a stimulating classroom day.",
+      learn:
+        "Use the creator’s real professional stressor as the hook, then show one calm home sequence that proves the reset."
+    },
+    {
+      category: "wellness",
+      title: "Endometriosis Meditation Night Environment",
+      platform: "instagram",
+      shortcode: "Dcm107YT9TG",
+      url: "https://www.instagram.com/reel/Dcm107YT9TG/",
+      direction: "Meditation and chronic-pain community • Soft environment",
+      overview:
+        "An endometriosis meditation specialist explains why trust matters in brand collaborations, then frames the projector as a soft, soothing nighttime environment for meditation classes or before bed.",
+      watch: "Full reel",
+      visual:
+        "The strongest asset is the creator’s trust-based explanation, supported by the chill room mood and projection atmosphere.",
+      learn:
+        "Let wellness creators be transparent about gifted products and keep the recommendation low-pressure, especially in sensitive health communities."
+    },
+    {
+      category: "family",
+      title: "A Son’s Room Upgrade Beyond Glow Stars",
+      platform: "instagram",
+      shortcode: "DcmRYVdtAIl",
+      url: "https://www.instagram.com/reel/DcmRYVdtAIl/",
+      direction: "Child’s room • Long-term family use",
+      overview:
+        "Parents position the projector as something their son can enjoy in his room for years, comparing it favorably with stick-on glow-in-the-dark stars.",
+      watch: "Full reel",
+      visual:
+        "The message is simple and family-oriented: a child’s room gains a stronger, more flexible night-sky effect than static decor.",
+      learn:
+        "For family creators, compare the projector against a familiar alternative and show why the room feels more alive or lasting."
+    },
+    {
+      category: "spaces",
+      title: "Ceramic Tea and Nebula Cup Night",
+      platform: "instagram",
+      shortcode: "DdCHO7xMWKE",
+      url: "https://www.instagram.com/reel/DdCHO7xMWKE/",
+      direction: "Cozy rainy evening • Handmade decor match",
+      overview:
+        "A ceramics creator connects rainy evenings, tea, handmade Nebula cups, and the projector, making the galaxy effect feel tailored to her existing aesthetic.",
+      watch: "Full reel",
+      visual:
+        "The best visual idea is matching product atmosphere with creator-made objects, so the projection and cups feel like one styled ritual.",
+      learn:
+        "Look for props that already echo space, stars, or color gradients, then make the projector feel like the missing layer of the scene."
+    },
+    {
+      category: "wellness",
+      title: "Wind Down With Me Galaxy Ceiling",
+      platform: "instagram",
+      shortcode: "DcT04xNvccJ",
+      url: "https://www.instagram.com/reel/DcT04xNvccJ/",
+      direction: "Night routine • Self-care wind-down",
+      overview:
+        "Anita Rahimi frames the clip directly as a wind-down routine: the projector turns the ceiling into a galaxy and becomes part of a self-care night.",
+      watch: "Full reel",
+      visual:
+        "The caption makes the intended use clear—night routine, wind-down routine, self-care—so it belongs with wellness rather than children or product-only demos.",
+      learn:
+        "Use a direct 'wind down with me' structure: start with the evening mood, reveal the galaxy ceiling, and end with a simple link or code CTA."
+    }
   ];
 
-  const existingInstagramShortcodes = new Set(
-    library.cases
-      .filter((item) => item.platform === "instagram" && item.shortcode)
-      .map((item) => item.shortcode)
-  );
-
-  supplementalInstagramShortcodes.forEach((shortcode, index) => {
-    if (!existingInstagramShortcodes.has(shortcode)) {
-      library.cases.push(supplementalCopy(shortcode, index + 1));
-      existingInstagramShortcodes.add(shortcode);
-    }
-  });
   const firstFamily = library.cases.findIndex((item) => item.category === "family");
   library.cases.splice(firstFamily < 0 ? 0 : firstFamily, 0, familyCase);
 
   const firstCozy = library.cases.findIndex((item) => item.category === "spaces");
-library.cases.splice(firstCozy < 0 ? library.cases.length : firstCozy, 0, cozyCase);
+  library.cases.splice(firstCozy < 0 ? library.cases.length : firstCozy, 0, cozyCase);
   library.cases.splice(
     firstCozy < 0 ? library.cases.length : firstCozy + 1,
     0,
     tiktokCozyCase
   );
-})();
 
+  const existingKeys = new Set(
+    library.cases.map((item) => item.shortcode || item.videoId || item.videoSrc || item.url)
+  );
+
+  verifiedAddedCases.forEach((item) => {
+    const key = item.shortcode || item.videoId || item.videoSrc || item.url;
+    if (!existingKeys.has(key)) {
+      library.cases.push(item);
+      existingKeys.add(key);
+    }
+  });
+})();
