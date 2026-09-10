@@ -18,7 +18,7 @@
       "aria-label",
       "Open the original YouTube video in a new tab.",
     );
-    posterLink.innerHTML = 
+    posterLink.innerHTML = `
       <img src="./pococo-creator-inspiration-github-pages/assets/QaNa3w96IfY-poster.jpg" alt="">
       <span class="poster-action">
         <span class="poster-play" aria-hidden="true">&#9654;</span>
@@ -27,7 +27,7 @@
           <small class="embed-note">Open on YouTube</small>
         </span>
       </span>
-    ;
+    `;
     embedWrap.append(posterLink);
   });
 })();
